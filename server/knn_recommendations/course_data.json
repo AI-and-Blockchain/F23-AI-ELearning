@@ -1,0 +1,26 @@
+[
+  {
+    "course_id": 0,
+    "grade_level": 1,
+    "subject": "Math",
+    "course_name": "Mathematics 101",
+    "course_difficulty": 8,
+    "avg_rating": 6
+  },
+  {
+    "course_id": 1,
+    "grade_level": 3,
+    "subject": "Science",
+    "course_name": "Science Explorers",
+    "course_difficulty": 9,
+    "avg_rating": 9
+  },
+  {
+    "course_id": 2,
+    "grade_level": 6,
+    "subject": "Art",
+    "course_name": "Creative Arts Workshop",
+    "course_difficulty": 5,
+    "avg_rating": 2
+  }
+]

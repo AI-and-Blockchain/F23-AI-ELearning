@@ -13,7 +13,7 @@ const GradeSelection = () => {
 
   const handleButtonClick = (buttonIndex) => {
     setSelectedButton(buttonIndex);
-    axios.get('http://localhost:3001/test', {
+    axios.get('http://localhost:3001/recommendations', {
       params: {
         grade: buttonIndex,
       },

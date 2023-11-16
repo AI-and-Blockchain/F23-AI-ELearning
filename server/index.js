@@ -1,5 +1,6 @@
-const express = require("express");
-const cors = require('cors');
+import express from "express";
+import cors from 'cors';
+import { create } from 'ipfs-http-client';
 
 const PORT = process.env.PORT || 3001;
 
@@ -14,7 +15,8 @@ app.get('/', (req, res) => {
 });
 
 // Define a route to receive user data and call the Python AI script
-app.post('/recommendations', (req, res) => {
+app.post('/test', (req, res) => {
+
   // Extract user data from the request
   const { grade, interests } = req.body;
 
@@ -29,7 +31,23 @@ app.post('/recommendations', (req, res) => {
   });
 })
 
-app.get('/test', (req, res) => {
+app.get('/recommendations', (req, res) => {
+  const ipfsClient = create(new URL('http://127.0.0.1:8080'));
+
+  const retrieveFileFromIPFS = async (cid) => {
+    try {
+      const result = await ipfsClient.cat(cid);
+      console.log('File content:', result.toString());
+    } catch (error) {
+      console.error('Error retrieving file from IPFS:', error.message);
+    }
+  };
+
+  // Use the CID obtained from the upload step
+  const cid = 'your_cid_here';
+  retrieveFileFromIPFS(cid);
+
+
   var grade = req.query.grade;
   console.log(grade);
   var spawn = require('child_process').spawn;

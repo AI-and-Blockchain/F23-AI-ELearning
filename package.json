@@ -18,9 +18,16 @@
     "url": "https://github.com/AI-and-Blockchain/F23-AI-ELearning/issues"
   },
   "homepage": "https://github.com/AI-and-Blockchain/F23-AI-ELearning#readme",
+  "type": "module",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "mongoose": "^8.0.0"
+    "fs": "^0.0.1-security",
+    "ipfs": "^0.66.1",
+    "ipfs-http-client": "^60.0.1",
+    "mongoose": "^8.0.0",
+    "n": "^9.2.0",
+    "node": "^21.1.0",
+    "npm": "^10.2.4"
   }
 }
