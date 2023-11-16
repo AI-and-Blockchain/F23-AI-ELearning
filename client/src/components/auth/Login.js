@@ -26,10 +26,7 @@ const Login = (props) => {
         <h2 className="login-title">LOGIN</h2>
         <div className="steam-container">
           <button className="steam-api-button">
-            <cw-icon className="steamicon" >
-              <SteamLogo />
-            </cw-icon>
-            Steam
+            Dont have an account? Sign up here
         </button>
         </div>
         <form onSubmit={handleLogin} className="login-form">

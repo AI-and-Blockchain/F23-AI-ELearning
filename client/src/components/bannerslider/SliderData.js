@@ -1,18 +1,18 @@
-import CSGOdropBanner from '../../assets/images/csgodropbanner.png';
-import FollowUsBanner from '../../assets/images/followcsgodropbanner.png';
-import CSGOdropNote from '../../assets/images/csgodropnote.png';
+import TutorialHubBanner from '../../assets/images/Tutorialhublead.png';
+import TutorialHubBanner2 from '../../assets/images/Tutorialhublead2.png';
+import TutorialHubBanner3 from '../../assets/images/Tutorialhublead3.png';
 
 export const SliderData = [
   {
-    image: CSGOdropBanner,
-    title: "CSGOdrop home banner"
+    image: TutorialHubBanner,
+    title: "TutorialHub home banner"
   },
   {
-    image: FollowUsBanner,
-    title: "Follow CSGOdrop here"
+    image: TutorialHubBanner2,
+    title: ""
   },
   {
-    image: CSGOdropNote,
-    title: "CSGOdrop Kind Note"
+    image: TutorialHubBanner3,
+    title: "coming soon"
   }
 ]

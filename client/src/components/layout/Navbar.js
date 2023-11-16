@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import Login from '../auth/Login';
 import Register from '../auth/Register';
 
-import CSGOdrop from '../../assets/images/CSGOdrop.png';
+import TutorialHub from '../../assets/images/TutorialHub.png';
+
 import { ReactComponent as Roulette } from '../../assets/images/roulette.svg';
 import { ReactComponent as PVP } from '../../assets/images/pvp.svg';
 import { ReactComponent as Unboxing } from '../../assets/images/unboxing.svg';
@@ -35,38 +36,30 @@ const Navbar = () => {
   return (
     <nav class="navbar-header" className="nav">
       <div className="leftsidenav">
-        <Link className="link-logo" to="/"><img src={CSGOdrop} className="logo" alt="CSGOdrop"></img></Link>
+        <Link className="link-logo" to="/"><img src={TutorialHub} className="logo" alt="TutorialHub"></img></Link>
         <ul className="nav-games">
-          <li className="game">
-            <Link className="navlink" to="/roulette">
+          <li className="page">
+            <Link className="navlink" to="/discover">
               <cw-icon className="nav-icon">
                 <Roulette /> 
               </cw-icon>
-              <span className="name">ROULETTE</span>
+              <span className="name">Discover</span>
             </Link>
           </li>
-          <li className="game">
-            <Link className="navlink" to="/unboxing">
+          <li className="page">
+            <Link className="navlink" to="/explore">
               <cw-icon className="nav-icon">
                 <Unboxing />
               </cw-icon>
-              <span className="name">UNBOXING</span>
+              <span className="name">Explore</span>
             </Link>
           </li>
-          <li className="game">
-            <Link className="navlink" to="/pvp">
+          <li className="page">
+            <Link className="navlink" to="/preferences">
               <cw-icon className="nav-icon">
                 <PVP /> 
               </cw-icon>
-              <span className="name">PVP</span>
-            </Link>
-          </li>
-          <li className="game">
-            <Link className="navlink" to="/crash">
-              <cw-icon className="nav-icon">
-                <Crash /> 
-              </cw-icon>
-              <span className="name">CRASH</span>
+              <span className="name">Preferences</span>
             </Link>
           </li>
         </ul>
@@ -77,9 +70,6 @@ const Navbar = () => {
         </button>
         {toggleRegister ? <Register toggle={showRegister}/> : null}
         <button className="auth login" onClick={showLogin}>
-          <cw-icon className="steamicon">
-            <Steam fill="#FFFFFF"/>
-          </cw-icon>
           LOGIN
         </button>
         {toggleLogin ? <Login toggle={showLogin} /> : null}

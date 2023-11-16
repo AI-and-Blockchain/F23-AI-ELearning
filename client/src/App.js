@@ -2,10 +2,9 @@ import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Roulette from './pages/Roulette';
-import Unboxing from './pages/Unboxing';
-import Pvp from './pages/Pvp';
-import Crash from './pages/Crash';
+import Discover from './pages/Discover';
+import Explore from './pages/Explore';
+import Preferences from './pages/Preferences';
 
 import './App.css';
 
@@ -15,10 +14,9 @@ const App = () => {
       <Fragment>
         <Routes>
           <Route exact path="/" element={<Home />}/>
-          <Route exact path="/roulette" element={<Roulette />}/>
-          <Route exact path="/unboxing" element={<Unboxing />}/>
-          <Route exact path="/pvp" element={<Pvp />}/>
-          <Route exact path="/crash" element={<Crash />}/>
+          <Route exact path="/discover" element={<Discover />}/>
+          <Route exact path="/explore" element={<Explore />}/>
+          <Route exact path="/preferences" element={<Preferences />}/>
         </Routes>
       </Fragment>
     </Router>

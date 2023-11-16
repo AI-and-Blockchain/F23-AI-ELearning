@@ -15,7 +15,7 @@
 }
 
 .popup-inner {
-  background-color: rgb(80, 33, 39);
+  background-color: #053c75;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -23,7 +23,7 @@
   transition: all 0.5s ease-in;
   padding: 56px 24px 32px;
   border-radius: 5px;
-  border: 6px solid #722F37; 
+  border: 6px solid #8998f0; 
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
   width: 25%;
   height: 75%;
@@ -65,7 +65,7 @@
   border-radius: 5px;
   margin-bottom: 10px;
   border: 1px solid white;
-  background-color: #722F37;
+  background-color: #89CFF0;
 }
 
 .email-input {

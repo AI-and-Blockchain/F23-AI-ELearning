@@ -32,8 +32,8 @@ body {
 }
 
 .logo {
-  width: 250px;
-  padding-left: 25px;
+  width: 200px;
+  padding-left: 40px;
 }
 
 .nav-games {
@@ -44,7 +44,7 @@ body {
   justify-content: space-between;
 }
 
-.game {
+.page {
   align-items: center;
   justify-content: space-between;
 }
@@ -52,14 +52,14 @@ body {
 .navlink {
   display: block;
   padding: 0.5rem 1rem;
-  color: #8e8e99;
-  fill: #8e8e99;
+  color: #053c75;
+  fill: #053c75;
   text-decoration: none;
 }
 
 .navlink:hover {
-  color: #f4e59f;
-  fill: #f4e59f;
+  color: whitesmoke;
+  fill: whitesmoke;
 }
 
 .name {
@@ -104,4 +104,97 @@ body {
 
 .steamicon {
   background-color: #8e8e99;
+}
+
+
+.circular-buttons-container {
+  font-family: 'Changa-Regular', sans-serif;
+  font-weight: bold;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px; /* Adjust the height as needed */
+}
+
+.circular-button {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: #3498db; /* Change the background color as needed */
+  color: #fff; /* Change the text color as needed */
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.5s;
+}
+
+.circular-button:hover {
+  background-color: #053c75;
+}
+
+.circular-button:focus,
+.circular-button:active {
+  background-color: black;
+  transition: none;
+}
+
+
+.circular-button:nth-child(1) {
+  transform: rotate(0deg) translate(275px) rotate(0deg);
+}
+
+/* Add rules for the other buttons */
+.circular-button:nth-child(2) {
+  transform: rotate(27.692307692307693deg) translate(275px) rotate(-27.692307692307693deg);
+}
+
+.circular-button:nth-child(3) {
+  transform: rotate(55.38461538461539deg) translate(275px) rotate(-55.38461538461539deg);
+}
+
+.circular-button:nth-child(4) {
+  transform: rotate(83.07692307692308deg) translate(275px) rotate(-83.07692307692308deg);
+}
+
+.circular-button:nth-child(5) {
+  transform: rotate(110.76923076923077deg) translate(275px) rotate(-110.76923076923077deg);
+}
+
+.circular-button:nth-child(6) {
+  transform: rotate(138.46153846153845deg) translate(275px) rotate(-138.46153846153845deg);
+}
+
+.circular-button:nth-child(7) {
+  transform: rotate(166.15384615384616deg) translate(275px) rotate(-166.15384615384616deg);
+}
+
+.circular-button:nth-child(8) {
+  transform: rotate(193.84615384615387deg) translate(275px) rotate(-193.84615384615387deg);
+}
+
+.circular-button:nth-child(9) {
+  transform: rotate(221.53846153846155deg) translate(275px) rotate(-221.53846153846155deg);
+}
+
+.circular-button:nth-child(10) {
+  transform: rotate(249.23076923076923deg) translate(275px) rotate(-249.23076923076923deg);
+}
+
+.circular-button:nth-child(11) {
+  transform: rotate(276.9230769230769deg) translate(275px) rotate(-276.9230769230769deg);
+}
+
+.circular-button:nth-child(12) {
+  transform: rotate(304.61538461538464deg) translate(275px) rotate(-304.61538461538464deg);
+}
+
+.circular-button:nth-child(13) {
+  transform: rotate(332.3076923076923deg) translate(275px) rotate(-332.3076923076923deg);
+}
+
+.static {
+  color: 053c75;
 }
