@@ -18,7 +18,8 @@ A diploma will be awarded on curriculum completion after a user completes a numb
 The data will only be viewable by the course recommendation algorithm and a user’s certificate will only be viewable by user.
 
 # Component Diagram
-![alt text]![alt text](https://github.com/chinm4/AI-E-Learning/blob/main/ai_component_diagram.png?raw=true)
+![alt text]![alt text](https://github.com/AI-and-Blockchain/F23_AI_ELearning/blob/main/Component_Diagram_AI_E-Learning.png)
 
 # Sequence Diagram
 ![alt text]![alt text](https://github.com/chinm4/AI-E-Learning/blob/main/ai_sequence_diagram.png?raw=true)
+
