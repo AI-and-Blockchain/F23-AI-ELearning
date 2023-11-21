@@ -1,6 +1,11 @@
 # AI-E-Learning
 This project focuses on creating a platform that  utilizes AI for improved learning and blockchain for  holding certificates and documentation. The platform will be geared towards grades K-12,  with the main goal being to generate the most  efficient learning experience for each user.
 
+# How to run code:
+1. Clone the repositiory into a folder
+2. Run the server by running npm start
+3. Run the frontend by / cd client / and npm start
+
 # AI Component:
 Personalized experience for each user.
 Machine learning will be used to determine which courses a student will likely excel in based on correlations.
@@ -21,5 +26,5 @@ The data will only be viewable by the course recommendation algorithm and a user
 ![alt text]![alt text](https://github.com/AI-and-Blockchain/F23_AI_ELearning/blob/main/Component_Diagram_AI_E-Learning.png)
 
 # Sequence Diagram
-![alt text]![alt text](https://github.com/chinm4/AI-E-Learning/blob/main/ai_sequence_diagram.png?raw=true)
+![alt text]![alt text](https://github.com/AI-and-Blockchain/F23_AI_ELearning/blob/main/sequence_diagram3.png)
 
