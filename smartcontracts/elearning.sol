@@ -3,6 +3,28 @@ pragma solidity ^0.8.0;
 
 contract ELearning {
 
+    // data for IPFS
+    //  user data
+    //      (MAYBE) user_id
+    //      name
+    //      pass
+    //      grade/skill level
+    //      certificate_hashes
+    //      list of user interactions for
+    //          machine learning model
+    //  course data
+    //     course_id
+        // grade_level
+        // subject
+        // course_name
+        // course_difficulty
+        // avg_rating
+    //  certificate data
+    //      certificate hash
+    //      course_id
+    //      user_id
+    //      score
+
     struct Course {
         uint256 course_id;
         string course_data_hash;
@@ -11,7 +33,8 @@ contract ELearning {
 
     mapping(uint256 => Course) public courses;                  // course_id to course
     mapping(address => string[]) public certificate_hashes;     // user to their certificate hashes
-    mapping(address => uint256[]) public current_courses;       // user to their currect courses
+    mapping(address => uint256[]) public current_courses;       // user to their currect course_ids
+    mapping(address => uint256[]) public completed_courses;     // user to their completed courses_ids
 
 
     event Certificate_Awarded(address indexed user, string ipfs_hash);
@@ -35,8 +58,9 @@ contract ELearning {
     //  the same as the course_name variable of the course
     // adds certificate_hash to the db
     // emits Certificate_Awarded
-    function award_certificate(string memory certificate_hash) public {
+    function award_certificate(string memory certificate_hash, uint256 course_id) public {
         certificate_hashes[msg.sender].push(certificate_hash);
+        completed_courses[msg.sender].push(course_id);
         emit Certificate_Awarded(msg.sender, certificate_hash);
     }
 
@@ -57,6 +81,9 @@ contract ELearning {
     // gets course_data_hash for ipfs by id
     function get_course_data_hash(uint256 course_id) public view returns (string memory)
     { return courses[course_id].course_data_hash; }
+
+    function get_completed_courses() public view returns (uint256[] memory)
+    { return completed_courses[msg.sender]; }
 }
 
 
