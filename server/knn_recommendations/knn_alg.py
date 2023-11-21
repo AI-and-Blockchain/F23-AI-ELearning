@@ -1,4 +1,5 @@
 import sys
+import json
 import numpy as np
 from sklearn.neighbors import NearestNeighbors
 
@@ -17,6 +18,9 @@ user_interactions = np.array([1, 0, 1])
 
 # User's input (usually recieved through the body of the )
 user_grade = sys.argv[1]
+print(user_grade)
+course_data = sys.argv[2]
+print(course_data)
 user_interests = ["Math", "Science"]
 
 # Combine user input and interactions into a single feature vector
