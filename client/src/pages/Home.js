@@ -3,7 +3,8 @@ import React, { Fragment } from 'react';
 import Navbar from '../components/layout/Navbar';
 import Slider from '../components/bannerslider/Slider';
 import Footer from '../components/layout/Footer';
-import GradeSelection from '../components/layout/GradeSelection';
+import GradeSelection from '../components/preferences/GradeSelection';
+import SubjectSelection from '../components/preferences/SubjectSelection';
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Navbar />
       <Slider />
       <GradeSelection />
+      <SubjectSelection />
       <Footer />
     </Fragment>
   );
