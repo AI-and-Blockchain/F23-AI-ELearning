@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { MetaMaskAvatar } from 'react-metamask-avatar';
 
 import Login from '../auth/Login';
 import Register from '../auth/Register';
@@ -15,6 +16,19 @@ import { ReactComponent as Steam } from '../../assets/images/steam.svg';
 const Navbar = () => {
   const [toggleLogin, setToggleLogin] = useState(false);
   const [toggleRegister, setToggleRegister] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [address, setAddress] = useState("");
+
+  const changeAuthentication = (publicAddress) => {
+    console.log("sign in with metamask", publicAddress);
+    if(publicAddress !== "") {
+      setAddress(publicAddress);
+      setIsAuthenticated(true);
+    } else {
+      setAddress("");
+      setIsAuthenticated(false); 
+    }
+  }
 
   const showLogin = () => {
     if (toggleRegister)
@@ -64,7 +78,8 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="rightsidenav">
+      {!isAuthenticated ? (
+        <div className="rightsidenav">
         <button className="auth register" onClick={showRegister} >
           REGISTER
         </button>
@@ -72,8 +87,15 @@ const Navbar = () => {
         <button className="auth login" onClick={showLogin}>
           LOGIN
         </button>
-        {toggleLogin ? <Login toggle={showLogin} /> : null}
+        {toggleLogin ? <Login toggle={showLogin} changeAuthentication={changeAuthentication} /> : null}
       </div>
+  ) : (
+    <div className="authrightsidenav">
+      <MetaMaskAvatar address={address} size={24} />
+      <p className="address-display">{address}</p>
+    </div>
+  )}
+
     </nav>
   );
 }

@@ -19,10 +19,16 @@ user_interactions = np.array([1, 0, 1])
 # User's input (usually recieved through the body of the )
 user_grade = sys.argv[1]
 print(user_grade)
-course_data = sys.argv[2]
-print(course_data)
-user_interests = ["Math", "Science"]
 
+course_data = sys.argv[2]
+course_data_object = json.loads(course_data)
+print(course_data_object)
+
+user_data = sys.argv[3]
+user_data_object = json.loads(user_data)
+print(user_data_object)
+
+user_interests = ["Math", "Science"] 
 # Combine user input and interactions into a single feature vector
 user_features = np.hstack((np.array([user_grade]), user_interactions))
 

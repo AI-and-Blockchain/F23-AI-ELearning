@@ -75,6 +75,19 @@ body {
   justify-content: space-between;
 }
 
+.authrightsidenav {
+  width: 26rem;
+  padding-right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.address-display {
+  padding-top: 15px;
+}
+
+
 .auth {
   width: 9rem;
   height: 50px;

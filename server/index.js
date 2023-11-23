@@ -4,6 +4,7 @@ import { createHelia } from 'helia';
 import { json } from '@helia/json';
 import { spawn } from 'child_process';
 import CourseData from './knn_recommendations/course_data.json' assert { type: "json" };
+import UserData from './knn_recommendations/user_data.json' assert { type: "json" };
 
 const PORT = process.env.PORT || 3001;
 
@@ -14,7 +15,8 @@ app.use(express.json())
 
 const helia = await createHelia();
 const j = json(helia);
-const hash = await j.add(CourseData);
+const courseHash = await j.add(CourseData);
+const userHash = await j.add(UserData);
 
 const retrieveFileFromIPFS = async (cid) => {
   try {
@@ -53,8 +55,9 @@ app.get('/recommendations', async (req, res) => {
 
   // Use the CID obtained from the upload step
   var grade = req.query.grade;
-  var course_data = await j.get(hash);
-  var pythonProcess = spawn('python', ["/Users/matthew/Documents/F23_AI_ELearning/server/knn_recommendations/knn_alg.py", grade, JSON.stringify(course_data)]);
+  var course_data = await j.get(courseHash);
+  var user_data = await j.get(userHash);
+  var pythonProcess = spawn('python', ["/Users/matthew/Documents/F23_AI_ELearning/server/knn_recommendations/knn_alg.py", grade, JSON.stringify(course_data), JSON.stringify(user_data)]);
   pythonProcess.stdout.on('data', (data) => {
     console.log(data.toString());
     res.send(data.toString());
