@@ -48,7 +48,6 @@ const Login = ({toggle, changeAuthentication}) => {
     setEmail('');
     setPassword('');
   }, [])
-
   return (
     <div className="popup">
       <div className="popup-inner">
