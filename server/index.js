@@ -5,6 +5,7 @@ import { json } from '@helia/json';
 import { spawn } from 'child_process';
 import CourseData from './knn_recommendations/course_data.json' assert { type: "json" };
 import UserData from './knn_recommendations/user_data.json' assert { type: "json" };
+import fs from 'fs';
 
 const PORT = process.env.PORT || 3001;
 
@@ -15,8 +16,8 @@ app.use(express.json())
 
 const helia = await createHelia();
 const j = json(helia);
-const courseHash = await j.add(CourseData);
-const userHash = await j.add(UserData);
+var courseHash = await j.add(CourseData);
+var userHash = await j.add(UserData);
 
 const retrieveFileFromIPFS = async (cid) => {
   try {
@@ -28,6 +29,13 @@ const retrieveFileFromIPFS = async (cid) => {
     console.error('Error retrieving file from IPFS:', error.message);
   }
 };
+
+// Upload the modified JSON file to Helia IPFS
+async function uploadModifiedFile() {
+  const data = fs.readFileSync('/Users/matthew/Documents/F23_AI_ELearning/server/knn_recommendations/user_data.json');
+  const result = await ipfs.add({ content: data });
+  return result.cid;
+}
 
 //app.use(express) //Parse JSON requests
 app.get('/', (req, res) => {
@@ -62,6 +70,25 @@ app.get('/recommendations', async (req, res) => {
     console.log(data.toString());
     res.send(data.toString());
   });
+});
+
+app.get('/signedIn', async (req, res) => {
+  var address = req.query.Address;
+  var user_data = await j.get(userHash);
+  var pythonProcess = spawn('python', ["/Users/matthew/Documents/F23_AI_ELearning/server/knn_recommendations/UserData.py", address, JSON.stringify(user_data)]);
+  pythonProcess.stdout.on('data', (data) => {
+    console.log(data.toString());
+    res.send(data.toString());
+  });
+  pythonProcess.stderr.setEncoding('utf8');
+  pythonProcess.stderr.on('data', function(data) {
+    //Here is where the error output goes
+
+    console.log('stderr: ' + data);
+    res.send(data.toString());
+  });
+  //var userHash = await uploadModifiedFiles();
+  //console.log('new user hash: ' + userHash);
 });
 
 app.listen(PORT, () => {

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MetaMaskAvatar } from 'react-metamask-avatar';
+import Dropdown from 'react-bootstrap/Dropdown';
+import axios from 'axios';
 
 import Login from '../auth/Login';
 import Register from '../auth/Register';
@@ -10,20 +12,33 @@ import TutorialHub from '../../assets/images/TutorialHub.png';
 import { ReactComponent as Roulette } from '../../assets/images/roulette.svg';
 import { ReactComponent as PVP } from '../../assets/images/pvp.svg';
 import { ReactComponent as Unboxing } from '../../assets/images/unboxing.svg';
-import { ReactComponent as Crash } from '../../assets/images/crash.svg';
-import { ReactComponent as Steam } from '../../assets/images/steam.svg';
 
 const Navbar = () => {
   const [toggleLogin, setToggleLogin] = useState(false);
   const [toggleRegister, setToggleRegister] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [address, setAddress] = useState("");
+  const [data, setData] = useState("");
 
   const changeAuthentication = (publicAddress) => {
     console.log("sign in with metamask", publicAddress);
     if(publicAddress !== "") {
       setAddress(publicAddress);
       setIsAuthenticated(true);
+      axios.get('http://localhost:3001/signedIn', {
+      params: {
+        Address: publicAddress,
+      },
+    })
+    .then(response => {
+      // Handle the successful response
+      setData(response.body);
+      console.log(response.body);
+    })
+    .catch(error => {
+      // Handle errors
+      console.error('Error fetching data:', error);
+    });
     } else {
       setAddress("");
       setIsAuthenticated(false); 
@@ -42,10 +57,16 @@ const Navbar = () => {
     setToggleRegister(!toggleRegister);
   }
 
+  const logout = () => {
+    setAddress("");
+    setIsAuthenticated(false);
+  }
+
   useEffect(() => {
     setToggleLogin(false);
     setToggleRegister(false);
   }, [])
+
 
   return (
     <nav class="navbar-header" className="nav">
@@ -91,8 +112,15 @@ const Navbar = () => {
       </div>
   ) : (
     <div className="authrightsidenav">
-      <MetaMaskAvatar address={address} size={24} />
-      <p className="address-display">{address}</p>
+      <Dropdown>
+        <Dropdown.Toggle variant="primary" id="signout" className="profile-label">
+          <MetaMaskAvatar address={address} size={24} className="inline"/>
+          <p className="address-display">{address.substring()}</p>
+        </Dropdown.Toggle>
+        <Dropdown.Menu>
+          <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
     </div>
   )}
 

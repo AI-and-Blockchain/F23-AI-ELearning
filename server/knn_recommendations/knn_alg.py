@@ -41,7 +41,7 @@ course_features = np.array([course["grade_level"] for course in course_data])  #
 ])"""
 
 # Initialize k-NN model
-k = 3  # You can adjust the value of k.
+k = 50  # You can adjust the value of k.
 knn = NearestNeighbors(n_neighbors=k, metric="euclidean")  # Euclidean distance metric for simplicity.
 
 # Fit the model with course features

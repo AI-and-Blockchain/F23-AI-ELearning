@@ -17,7 +17,7 @@ const Login = ({toggle, changeAuthentication}) => {
     setLoading(true);
 
     try {
-      if (window?.ethereum?.isMetaMask) {
+      if (window.ethereum.isMetaMask) {
         // Desktop browser
         const accounts = await window.ethereum.request({
           method: "eth_requestAccounts",

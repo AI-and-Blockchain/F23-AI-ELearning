@@ -1,0 +1,88 @@
+{
+    "userData": [
+        {
+            "user_address": "0xef8Fd24BFC6afa3924f18187Fd3BB9bb72874899",
+            "name": "testA",
+            "pass": "inTheStu",
+            "grade/skill_level": 0,
+            "certificate_hashes": [
+                "bin",
+                "boon",
+                "baked"
+            ],
+            "user_interactions": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "user_address": "0xef8Fd24BFC6afa3924f18187Fd3BB9bb72874899",
+            "name": "testA",
+            "pass": "inTheStu",
+            "grade/skill_level": 0,
+            "certificate_hashes": [
+                "bin",
+                "boon",
+                "baked"
+            ],
+            "user_interactions": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "user_address": "0xef8Fd24BFC6afa3924f18187Fd3BB9bb72874899",
+            "name": "testA",
+            "pass": "inTheStu",
+            "grade/skill_level": 0,
+            "certificate_hashes": [
+                "bin",
+                "boon",
+                "baked"
+            ],
+            "user_interactions": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "user_address": "0xef8Fd24BFC6afa3924f18187Fd3BB9bb72874899",
+            "name": "testA",
+            "pass": "inTheStu",
+            "grade/skill_level": 0,
+            "certificate_hashes": [
+                "bin",
+                "boon",
+                "baked"
+            ],
+            "user_interactions": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ]
+}

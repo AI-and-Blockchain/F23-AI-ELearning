@@ -83,8 +83,20 @@ body {
   justify-content: space-between;
 }
 
+.profile-label {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+}
+
+.inline {
+  display: inline;
+}
+
 .address-display {
-  padding-top: 15px;
+  display: inline;
+  padding-top: 3px;
 }
 
 
